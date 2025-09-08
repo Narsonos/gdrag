@@ -1,0 +1,11 @@
+OLLAMA_BASE_URL=http://ollama:11434
+GOOGLE_DRIVE_CLIENT_ID=
+GOOGLE_DRIVE_API_KEY=
+GOOGLE_REDIRECT_URI=http://localhost:3000
+ENABLE_GOOGLE_DRIVE_INTEGRATION=True
+WEBUI_SECRET_KEY=<any random key>
+WEBUI_ADMIN_USER=<default admin username>
+WEBUI_ADMIN_EMAIL=<default admin email>
+WEBUI_ADMIN_PASS=<default admin password>
+ENV=prod
+
