@@ -24,7 +24,7 @@ Note: Google drive tool (not the official picker) requires additional, independe
 2. Create a key for the service account and export it as JSON. Copy the Agent's email. 
 3. Create a folder for the Agent on the GoogleDrive and share it with the agent by email. The agent will be able to access data only inside this folder.
 4. In OpenWebUI open the Google Drive tool (in Workspace), click the gear icon and edit Valves. 
-5. Insert the key JSON content and Folder ID (just copy it from the link to folder) into corresponding fields.
+5. Insert the key JSON content and Folder ID (just copy it from the link to folder on GoogleDrive) into corresponding fields.
 6. Click save.
 
 Since these 2 Google Drive tools are independent, in fact, you may omit some of the steps, if you want to make it work just for the *unofficial* tool.
@@ -36,9 +36,16 @@ Though, you still need a project in the Google Cloud with GoogleDrive API access
 Due to the hardware restrictions I have I decided to test with cloud hosted models, primarily GPT-4 mini and nano.
 Works fine with both, though mini, obviously, is better.
 
+Note: It's advised to use a system prompt. A simple one would perfectly do!
+My example used:
+```prompt
+Ты отвечаешь на вопросы клиентов сервиса RealtyCalendar. Используй данные с google drive для ответа на вопрос. Если в файлах есть ссылки - используй их для получения информации.
+```
+
 In the following example we see how the model:
 - Fetched the list of files from google drive
 - Downloaded the content, a Google Sheet (don't mind that it has .txt extension, it's still a spreadsheet and would be the same for .xlsx or any other)
 - Found a URL that is related, read the internet page.
 
 ![The desired output all in a single prompt (with system prompt guidance) by GPT-4 mini](./example.png)
+
